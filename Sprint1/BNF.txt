@@ -1,0 +1,67 @@
+<Program>     		::= <MainClass> <<SetOfFunction>>;
+<MainClass>  		::= <SetOfNewline> "main" ":" "\n" <SetOfSteps>;
+<Function>   		::= <ID> ":" "\n" <SetOfSteps>;
+					
+<SetOfFunction>  	::= <Function> <SetOfFunction>
+                    |;
+					
+<SetOfSteps> 		::= <Step> <SetOfSteps>
+                    |;
+
+<StepLine>        	::= <StepNumber> ":" <Stmt> "|" <Result>
+                    |<StepNumber> ":" <IfStmt> "|" <Result>;
+
+<SetOfNewline>    	::= "\n" <SetOfNewline>
+                    |;
+
+<Step>      		::= <StepLine> <SetOfNewline>;
+
+<StepNumber>  		::= "step" <INTEGER>;
+	
+<DocumentObj>    	::= "button" | "webpage" | "textfield";
+
+<Result>     		::= <ObjectExpr> <ShouldPhrase>
+					|;
+					
+<ObjectExpr> 		::= <DocumentObj> "that" "have" "value" <STRING_LITERAL>
+					| "current" <DocumentObj>
+					| <DocumentObj> "with" "attribute" <STRING_LITERAL>
+					| <DocumentObj> "with" "value" <STRING_LITERAL>
+					| <DocumentObj> "at" <URL>;
+
+<OtherwiseStmt>		::= "otherwise" <Stmt>
+                    |;
+
+<Stmt>      		::= "do" <StepNumber> <IntegerTime>
+                    |"do" <ID> <IntegerTime>
+					|"go" "to" <URL>
+					|"go" "to" <StepNumber>
+					|"enter" <StringExpr> "into" <ObjectExpr>
+					|"enter" <IntegerExpr> "into" <ObjectExpr>
+					|"click" <ObjectExpr>
+					|"refresh" <ObjectExpr>
+					|"exit";
+
+<IfStmt>          	::= "if" "there" "is" <ObjectExpr> <Stmt> <OtherwiseStmt>
+                    |"if" "there" "exists" <ObjectExpr> <Stmt> <OtherwiseStmt>;
+
+<IntegerTime>     	::= <IntegerExpr> <TIME>
+                    |;
+
+<IntegerExpr>    	::= <INTEGER>
+                    | <NUMBER> "from" <ObjectExpr>
+                    | <NUMBER> "from" <ObjectExpr> <IntOperation> <IntegerExpr>
+                    | <INTEGER> <IntOperation> <IntegerExpr>;
+
+<StringExpr>     	::= <STRING_LITERAL>
+                    | <TEXT> "from" <ObjectExpr>
+                    | <TEXT> "from" <ObjectExpr> <StrOperation> <StringExpr>
+                    | <STRING_LITERAL> <StrOperation> <StringExpr>;
+ 
+<ShouldPhrase> 		::= "should" "have" "value" <STRING_LITERAL>
+					| "should" "contain" <STRING_LITERAL>
+					| "should" <RESULTACTION>;
+
+<IntOperation>    	::= <PLUS> | <MINUS>;
+
+<StrOperation>    	::= <PLUS>;

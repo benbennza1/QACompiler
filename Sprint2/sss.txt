@@ -1,0 +1,4 @@
+Environment variables
+C:\Program Files\Python36\Scripts
+https://sites.google.com/a/chromium.org/chromedriver/downloads
+https://github.com/mozilla/geckodriver/releases

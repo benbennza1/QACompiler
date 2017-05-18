@@ -1,0 +1,2 @@
+main :
+step 1 : enter text from textfield with title "InputA" plus text from textfield with title "InputB" into textfield with title "Search" |

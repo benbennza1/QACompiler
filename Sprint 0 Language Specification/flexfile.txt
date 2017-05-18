@@ -1,0 +1,13 @@
+Program	::= (Whitespace | Token)*
+
+Token		::= ID | Integer | Delimiter
+ID			::= Letter (Letter | Digit)*
+String		::= """ (Symbol | WhiteSpace | Integer | Letter)* """
+Integer		::= Digit+
+Delimiter	::= <newline>
+ReservedWord::= "list",“exit”, ”step”, “do”, “if”, “go”, ”to”, “enter”, “into”,"button","textfield", "webpage", “that”, “value”, "current", "has", “have”,  “contain”, ”contains”, “time”, “times”,“there”, “is”
+ActionCmd	::= “enter”,“click”,“refresh”,"load" 
+Whitespace	::= <space> | <tab>
+Letter		::= "a" | ... | "z" | "A" | ... | "Z"
+Digit		::= "0" | ... | "9"
+Symbol	::= "-" | "." | "_" | "~" | ":" | "/" | "?" | "#" | "[" | "]" | "@" | "!" | "$" | "&" | "'" | "(" | ")" | "*" | "+" | "," | ";" | "=" | "`" 

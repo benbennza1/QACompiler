@@ -1,0 +1,3 @@
+main :
+step 1 : go to https://www.google.ca/ | webpage at https://www.google.ca/ should load
+step 2 : click button with value "Google Search" | current webpage should contain "Test - Wikipedia"

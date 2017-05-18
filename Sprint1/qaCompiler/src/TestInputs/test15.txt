@@ -1,0 +1,14 @@
+main :
+step 1 : go to https://www.google.ca/ | webpage at https://www.google.ca/ should load
+step 2 : enter "test" into textfield with title "Search" | textfield with title "Search" should have value "test"
+step 3 : if there is button with value "Google Search" go to step 5 otherwise go to step 4 |
+step 4 : exit |
+step 5 : click button with value "Google" | current webpage should contain "Test - Wikipedia"
+step 6 : refresh current webpage | webpage at https://www.google.ca/ should load
+step 7 : do step 6 10 times |
+step 8 : do refreshwebpage 5 times |
+step 9 : enter number from textfield with title "InputA" minus number from textfield with title "InputB" into textfield with title "Search" |
+step 9 : enter text from textfield with title "InputA" plus text from textfield with title "InputB" into textfield with title "Search" |
+
+refreshwebpage :
+step 1 : refresh current webpage | webpage at https://www.google.ca/ should load
